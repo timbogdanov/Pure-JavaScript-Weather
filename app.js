@@ -17,7 +17,7 @@ window.addEventListener('load', () => {
       lat = position.coords.latitude;
 
       const apiKey = 'cd3c9e871a3df32134b43dc0c7a65547';
-      const api = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=imperial`;
+      const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=imperial`;
 
       fetch(api)
         .then((res) => {
@@ -44,7 +44,7 @@ window.addEventListener('load', () => {
 
       searchInput.addEventListener('keyup', function (event) {
         let inputValue = searchInput.value;
-        const apiCity = `http://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=${apiKey}&units=imperial`;
+        const apiCity = `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=${apiKey}&units=imperial`;
         if (event.keyCode === 13) {
           fetch(apiCity)
             .then((res) => {
