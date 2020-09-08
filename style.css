@@ -1,0 +1,159 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+html,
+body {
+  font-size: 62.5%;
+  font-family: 'Inter', sans-serif;
+  background: #eeeeee;
+}
+
+.weather-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather-app {
+  width: 375px;
+  height: 780px;
+  border-radius: 40px;
+  background: #dfe9f6;
+  border: 10px solid white;
+  overflow: hidden;
+}
+
+.notch-wrapper {
+  height: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notch-left,
+.notch-right {
+  width: 25%;
+  height: 100%;
+}
+
+.notch-left {
+  border-top-right-radius: 20px;
+}
+
+.notch-center {
+  width: 50%;
+  height: 100%;
+  background: white;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.search-wrapper {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.search-wrapper input {
+  width: 100%;
+  padding: 14px 20px 14px 45px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  color: #666666;
+  letter-spacing: 0.5px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.search-wrapper ion-icon {
+  position: absolute;
+  left: 15px;
+  font-size: 2rem;
+  color: #666666;
+  top: 25%;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 20px;
+}
+
+.controls ion-icon {
+  font-size: 2.4rem;
+  color: #666666;
+}
+
+.controls .weather {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.weather h1 {
+  font-weight: 400;
+  color: #666666;
+  letter-spacing: 0.5px;
+  font-size: 1.8rem;
+}
+
+.weather h2 {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 1.6rem;
+  color: #666666;
+}
+
+.current-temp {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.temp-desc {
+  color: #666666;
+  font-size: 1.8rem;
+  margin-top: 50px;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+
+.temp-in-f {
+  color: #666666;
+  font-size: 10rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.weather-details {
+  display: flex;
+  margin: 20px;
+  border-radius: 15px;
+  overflow: scroll;
+  margin-top: 150px;
+}
+
+.detail {
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.8);
+  margin-right: 20px;
+  padding: 20px 20px 15px 20px;
+  color: #666666;
+}
+
+.detail h3 {
+  margin-top: 5px;
+  font-size: 3rem;
+  color: #555555;
+}

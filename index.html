@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="weather-wrapper">
+      <div class="weather-app">
+        <div class="notch-wrapper">
+          <div class="notch-left"></div>
+          <div class="notch-center"></div>
+          <div class="notch-right"></div>
+        </div>
+
+        <div class="search-wrapper">
+          <input class="search-input" type="text" placeholder="Enter City" />
+          <ion-icon name="location-outline"></ion-icon>
+        </div>
+        <div class="controls">
+          <div class="menu"></div>
+          <div class="weather">
+            <h1>Weather</h1>
+            <h2 class="location-name">Loading...</h2>
+          </div>
+          <div class="notification"></div>
+        </div>
+
+        <div class="current-temp">
+          <div class="temp-desc">Loading...</div>
+          <div class="temp-in-f">Loading...</div>
+        </div>
+
+        <div class="weather-details">
+          <div class="detail">
+            Feels Like
+            <h3 class="feels-like">100</h3>
+          </div>
+          <div class="detail">
+            Humidity
+            <h3 class="humidity">100</h3>
+          </div>
+          <div class="detail">
+            Wind
+            <h3 class="wind">100</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
