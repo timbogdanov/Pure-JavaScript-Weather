@@ -29,6 +29,7 @@ body {
   background: #eeeeee;
   border: 10px solid #333333;
   overflow: hidden;
+  transition: background 0.3s ease;
 }
 
 .notch-wrapper {
@@ -162,8 +163,5 @@ body {
   margin-top: 5px;
   font-size: 3rem;
   color: #555555;
-}
-
-img {
-  width: 100%;
+  transition: color 0.3s ease;
 }
