@@ -12,6 +12,8 @@ window.addEventListener('load', () => {
   let searchInput = document.querySelector('.search-input');
   let weatherH1 = document.querySelector('.weather h1');
   let detailH3 = document.querySelectorAll('.detail  h3');
+  let weatherHigh = document.querySelector('.high');
+  let weatherLow = document.querySelector('.low');
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -19,6 +21,7 @@ window.addEventListener('load', () => {
       lat = position.coords.latitude;
 
       const apiKey = 'cd3c9e871a3df32134b43dc0c7a65547';
+
       const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=imperial`;
 
       fetch(api)
@@ -28,7 +31,7 @@ window.addEventListener('load', () => {
         .then((data) => {
           const name = data.name;
           const description = data.weather[0].description;
-          const { temp, humidity, feels_like } = data.main;
+          const { temp, temp_max, temp_min, humidity, feels_like } = data.main;
           const { country } = data.sys;
           const wind = data.wind.speed;
 
@@ -40,7 +43,9 @@ window.addEventListener('load', () => {
           feelsLike.textContent = Math.round(feels_like) + '°';
           weatherHumidity.textContent = humidity + '%';
           weatherWind.textContent = Math.round(wind) + 'mph';
-          searchInput.value = name;
+          weatherHigh.textContent = Math.round(temp_max) + '°';
+          weatherLow.textContent = Math.round(temp_min) + '°';
+          searchInput.value = name + ', ' + country;
 
           if (temp <= 49) {
             weatherApp.style.background = '#3d405b';
@@ -87,7 +92,13 @@ window.addEventListener('load', () => {
 
       searchInput.addEventListener('keyup', function (event) {
         let inputValue = searchInput.value;
-        const apiCity = `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=${apiKey}&units=imperial`;
+
+        let eachValue = inputValue.split(', ');
+
+        //samples.openweathermap.org/data/2.5/weather?q=portland,or&appid=439d4b804bc8187953eb36d2a8c26a02
+        //api.openweathermap.org/data/2.5/weather?q=portland,or&appid=cd3c9e871a3df32134b43dc0c7a65547&units=imperial
+
+        const apiCity = `http://api.openweathermap.org/data/2.5/weather?q=${eachValue[0]},${eachValue[1]},${eachValue[2]}&appid=${apiKey}&units=imperial`;
         if (event.keyCode === 13) {
           fetch(apiCity)
             .then((res) => {
@@ -96,9 +107,17 @@ window.addEventListener('load', () => {
             .then((data) => {
               const name = data.name;
               const description = data.weather[0].description;
-              const { temp, humidity, feels_like } = data.main;
+              const {
+                temp,
+                temp_max,
+                temp_min,
+                humidity,
+                feels_like,
+              } = data.main;
               const { country } = data.sys;
               const wind = data.wind.speed;
+
+              console.log(data);
 
               tempDegree.textContent = Math.round(temp) + '°';
               tempDesc.textContent = description;
@@ -106,7 +125,9 @@ window.addEventListener('load', () => {
               feelsLike.textContent = Math.round(feels_like) + '°';
               weatherHumidity.textContent = humidity + '%';
               weatherWind.textContent = Math.round(wind) + 'mph';
-              searchInput.value = name;
+              weatherHigh.textContent = Math.round(temp_max) + '°';
+              weatherLow.textContent = Math.round(temp_min) + '°';
+              searchInput.value = name + ', ' + country;
 
               if (temp <= 49) {
                 weatherApp.style.background = '#3d405b';

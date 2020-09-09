@@ -83,9 +83,9 @@ body {
 .search-wrapper ion-icon {
   position: absolute;
   left: 15px;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #ffffff;
-  top: 28%;
+  top: 30%;
 }
 
 .controls {
