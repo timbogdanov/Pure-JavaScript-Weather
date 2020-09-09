@@ -11,7 +11,7 @@ html,
 body {
   font-size: 62.5%;
   font-family: 'Inter', sans-serif;
-  background: #f4f1de;
+  background: #D9E1F2;
 }
 
 .weather-wrapper {
@@ -26,7 +26,7 @@ body {
   width: 375px;
   height: 750px;
   border-radius: 40px;
-  background: #eeeeee;
+  background: #222222;
   border: 10px solid #444444;
   overflow: hidden;
   transition: background 0.3s ease;
@@ -97,7 +97,7 @@ body {
 
 .controls ion-icon {
   font-size: 2.4rem;
-  color: #444444;
+  color: white;
 }
 
 .controls .weather {
@@ -107,7 +107,7 @@ body {
 
 .weather h1 {
   font-weight: 400;
-  color: #444444;
+  color: #999999;
   letter-spacing: 0.5px;
   font-size: 1.6rem;
   margin-bottom: 5px;
@@ -117,7 +117,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.5px;
   font-size: 2rem;
-  color: #444444;
+  color: white;
 }
 
 .current-temp {
@@ -129,14 +129,14 @@ body {
 }
 
 .temp-desc {
-  color: #444444;
+  color: #999999;
   font-size: 1.8rem;
   letter-spacing: 0.5px;
   text-transform: capitalize;
 }
 
 .temp-in-f {
-  color: #444444;
+  color: white;
   font-size: 10rem;
   font-weight: 500;
   position: relative;
@@ -144,16 +144,14 @@ body {
 
 .weather-details {
   display: flex;
-  margin: 0 20px;
-  border-radius: 15px;
+  margin: 0 0 0 20px;
   overflow: scroll;
-
 }
 
 .detail {
   min-width: 140px;
   border-radius: 15px;
-  background: rgba(255, 255, 255, 1);
+  background: #333333;
   margin-right: 20px;
   padding: 20px 20px 15px 20px;
   color: #999999;
@@ -163,7 +161,7 @@ body {
 .detail h3 {
   margin-top: 5px;
   font-size: 3rem;
-  color: #444444;
+  color: white;
   font-weight: 500;
   transition: color 0.3s ease;
 }
@@ -174,8 +172,8 @@ img {
 
 .five-day-forecast {
   display: flex;
-  margin: 20px;
-  border-radius: 15px;
+  margin: 0 0 0 20px;
+
   overflow: scroll;
   margin-top: 30px;
 }
@@ -199,7 +197,7 @@ img {
 
 .three-hour-time {
   font-size: 1.4rem;
-  color: #CCCCCC;
+  color: #999999;
 }
 
 .three-hour-desc {

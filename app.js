@@ -85,7 +85,7 @@ window.addEventListener('load', () => {
 
           // set DOM Elements from the API
 
-          tempDegree.textContent = Math.round(temp) + '°';
+          tempDegree.textContent = Math.round(temp);
           tempDesc.textContent = description;
           locationName.textContent = name + ', ' + country;
           feelsLike.textContent = Math.round(feels_like) + '°';
