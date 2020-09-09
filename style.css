@@ -165,3 +165,7 @@ body {
   color: #555555;
   transition: color 0.3s ease;
 }
+
+img {
+  width: 100%;
+}
