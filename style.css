@@ -27,7 +27,7 @@ body {
   height: 750px;
   border-radius: 40px;
   background: #eeeeee;
-  border: 10px solid white;
+  border: 10px solid #333333;
   overflow: hidden;
 }
 
@@ -40,7 +40,7 @@ body {
 
 .notch-left,
 .notch-right {
-  width: 25%;
+  width: 20%;
   height: 100%;
 }
 
@@ -49,9 +49,9 @@ body {
 }
 
 .notch-center {
-  width: 50%;
+  width: 60%;
   height: 100%;
-  background: white;
+  background: #333333;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
 }
