@@ -163,3 +163,7 @@ body {
   font-size: 3rem;
   color: #555555;
 }
+
+img {
+  width: 100%;
+}
