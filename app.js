@@ -137,7 +137,7 @@ window.addEventListener('load', () => {
 
                 let time = lapse.dt;
                 let timeConvert = new Date(time * 1000);
-                let hours = timeConvert.getHours();
+                let hours = timeConvert.getHours() % 12;
                 let minutes = '0' + timeConvert.getMinutes();
                 let formattedTime = hours + ':' + minutes.substr(-2);
 
