@@ -133,7 +133,7 @@ window.addEventListener('load', () => {
         //samples.openweathermap.org/data/2.5/weather?q=portland,or&appid=439d4b804bc8187953eb36d2a8c26a02
         //api.openweathermap.org/data/2.5/weather?q=portland,or&appid=cd3c9e871a3df32134b43dc0c7a65547&units=imperial
 
-        const apiCity = `http://api.openweathermap.org/data/2.5/weather?q=${eachValue[0]},${eachValue[1]},${eachValue[2]}&appid=${apiKey}&units=imperial`;
+        const apiCity = `https://api.openweathermap.org/data/2.5/weather?q=${eachValue[0]},${eachValue[1]},${eachValue[2]}&appid=${apiKey}&units=imperial`;
         if (event.keyCode === 13) {
           const fiveDayApi = `https://api.openweathermap.org/data/2.5/forecast?q=${eachValue[0]},${eachValue[1]},${eachValue[2]}&appid=${apiKey}&units=imperial`;
 
