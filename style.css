@@ -71,7 +71,12 @@ body {
   outline: none;
   color: #ffffff;
   letter-spacing: 0.5px;
+  font-size: 1.6rem;
   background: rgba(255, 255, 255, 0.3);
+}
+
+.search-wrapper input::placeholder {
+  color: #ffffff;
 }
 
 .search-wrapper ion-icon {
