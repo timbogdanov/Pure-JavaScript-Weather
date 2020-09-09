@@ -5,13 +5,10 @@ window.addEventListener('load', () => {
   let locationName = document.querySelector('.location-name');
   let tempDesc = document.querySelector('.temp-desc');
   let tempDegree = document.querySelector('.temp-in-f');
-  let weatherApp = document.querySelector('.weather-app');
   let feelsLike = document.querySelector('.feels-like');
   let weatherHumidity = document.querySelector('.humidity');
   let weatherWind = document.querySelector('.wind');
   let searchInput = document.querySelector('.search-input');
-  let weatherH1 = document.querySelector('.weather h1');
-  let detailH3 = document.querySelectorAll('.detail  h3');
   let weatherHigh = document.querySelector('.high');
   let weatherLow = document.querySelector('.low');
 
@@ -85,7 +82,7 @@ window.addEventListener('load', () => {
 
           // set DOM Elements from the API
 
-          tempDegree.textContent = Math.round(temp);
+          tempDegree.textContent = Math.round(temp) + '°';
           tempDesc.textContent = description;
           locationName.textContent = name + ', ' + country;
           feelsLike.textContent = Math.round(feels_like) + '°';
