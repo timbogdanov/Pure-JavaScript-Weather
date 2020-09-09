@@ -24,6 +24,41 @@ window.addEventListener('load', () => {
 
       const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=imperial`;
 
+      const fiveDayApi = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${apiKey}&units=imperial`;
+
+      let forecastWrapper = document.querySelector('.five-day-forecast');
+
+      fetch(fiveDayApi)
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          data.list.forEach((lapse) => {
+            let newForecast = document.createElement('div');
+            let newTime = document.createElement('div');
+            let newDesc = document.createElement('div');
+            let newTemp = document.createElement('div');
+            newTime.classList.add('three-hour-time');
+            newDesc.classList.add('three-hour-desc');
+            newTemp.classList.add('three-hour-temp');
+            newForecast.classList.add('three-hour');
+            forecastWrapper.appendChild(newForecast);
+            newForecast.appendChild(newTime);
+            newForecast.appendChild(newDesc);
+            newForecast.appendChild(newTemp);
+
+            let time = lapse.dt;
+            let timeConvert = new Date(time * 1000);
+            let hours = timeConvert.getHours();
+            let minutes = '0' + timeConvert.getMinutes();
+            let formattedTime = hours + ':' + minutes.substr(-2);
+
+            newTime.textContent = formattedTime;
+            newDesc.textContent = lapse.weather[0].main;
+            newTemp.textContent = Math.round(lapse.main.temp) + '°';
+          });
+        });
+
       fetch(api)
         .then((res) => {
           return res.json();
@@ -100,6 +135,45 @@ window.addEventListener('load', () => {
 
         const apiCity = `http://api.openweathermap.org/data/2.5/weather?q=${eachValue[0]},${eachValue[1]},${eachValue[2]}&appid=${apiKey}&units=imperial`;
         if (event.keyCode === 13) {
+          const fiveDayApi = `https://api.openweathermap.org/data/2.5/forecast?q=${eachValue[0]},${eachValue[1]},${eachValue[2]}&appid=${apiKey}&units=imperial`;
+
+          fetch(fiveDayApi)
+            .then((res) => {
+              return res.json();
+            })
+            .then((data) => {
+              data.list.forEach((lapse) => {
+                let oldForecast = document.querySelector('.three-hour');
+                oldForecast.remove();
+                let newForecast = document.createElement('div');
+                let newTime = document.createElement('div');
+                let newDesc = document.createElement('div');
+                let newTemp = document.createElement('div');
+                newTime.classList.add('three-hour-time');
+                newDesc.classList.add('three-hour-desc');
+                newTemp.classList.add('three-hour-temp');
+                newForecast.classList.add('three-hour');
+                forecastWrapper.appendChild(newForecast);
+                newForecast.appendChild(newTime);
+                newForecast.appendChild(newDesc);
+                newForecast.appendChild(newTemp);
+
+                // let newTime = document.querySelector('.three-hour-time');
+                // let newDesc = document.querySelector('.three-hour-desc');
+                // let newTemp = document.querySelector('.three-hour-temp');
+
+                let time = lapse.dt;
+                let timeConvert = new Date(time * 1000);
+                let hours = timeConvert.getHours();
+                let minutes = '0' + timeConvert.getMinutes();
+                let formattedTime = hours + ':' + minutes.substr(-2);
+
+                newTime.textContent = formattedTime;
+                newDesc.textContent = lapse.weather[0].main;
+                newTemp.textContent = Math.round(lapse.main.temp) + '°';
+              });
+            });
+
           fetch(apiCity)
             .then((res) => {
               return res.json();
@@ -116,8 +190,6 @@ window.addEventListener('load', () => {
               } = data.main;
               const { country } = data.sys;
               const wind = data.wind.speed;
-
-              console.log(data);
 
               tempDegree.textContent = Math.round(temp) + '°';
               tempDesc.textContent = description;

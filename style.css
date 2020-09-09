@@ -124,7 +124,7 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-top: 140px;
+  margin-top: 90px;
 }
 
 .temp-desc {
@@ -146,7 +146,7 @@ body {
   margin: 20px;
   border-radius: 15px;
   overflow: scroll;
-  margin-top: 140px;
+  margin-top: 30px;
 }
 
 .detail {
@@ -156,7 +156,7 @@ body {
   margin-right: 20px;
   padding: 20px 20px 15px 20px;
   color: #666666;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .detail h3 {
@@ -168,4 +168,40 @@ body {
 
 img {
   width: 100%;
+}
+
+.five-day-forecast {
+  display: flex;
+  margin: 20px;
+  border-radius: 15px;
+  overflow: scroll;
+  margin-top: 40px;
+}
+
+.three-hour {
+  padding: 20px 20px 15px 20px;
+  height: 100%;
+  min-width: 100px;
+  margin-right: 20px;
+  text-align: center;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.three-hour>* {
+  height: 100%;
+  color: #666666;
+}
+
+.three-hour-time {
+  font-size: 1.4rem;
+}
+
+.three-hour-desc {
+  font-size: 1.6rem;
+}
+
+.three-hour-temp {
+  font-size: 3rem;
+  font-weight: 500;
 }
