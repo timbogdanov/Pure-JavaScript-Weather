@@ -11,7 +11,7 @@ html,
 body {
   font-size: 62.5%;
   font-family: 'Inter', sans-serif;
-  background: #eeeeee;
+  background: #f4f1de;
 }
 
 .weather-wrapper {
@@ -24,9 +24,8 @@ body {
 
 .weather-app {
   width: 375px;
-  height: 100%;
   border-radius: 40px;
-  background: #dfe9f6;
+  background: #eeeeee;
   border: 10px solid white;
   overflow: hidden;
 }
